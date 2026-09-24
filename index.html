@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUNA Jewelry | جواهرات لوکس</title>
+
+  <meta name="description" content="LUNA Jewelry - جواهرات لوکس با طراحی ظریف و ماندگار">
+  <meta name="theme-color" content="#080808">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #080808;
+      color: #f5f1e8;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f3d77b;
+      --dark: #080808;
+      --dark2: #111111;
+      --gray: #a7a7a7;
+      --white: #f8f5ed;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8,8,8,.88);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(212,175,55,.18);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      letter-spacing: 8px;
+      color: var(--gold-light);
+      direction: ltr;
+    }
+
+    .logo span {
+      display: block;
+      font-family: Tahoma;
+      font-size: 8px;
+      letter-spacing: 4px;
+      color: #aaa;
+      text-align: center;
+      margin-top: -7px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav ul a {
+      color: #ddd;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    nav ul a:hover {
+      color: var(--gold-light);
+    }
+
+    .cart-btn {
+      border: 1px solid rgba(212,175,55,.5);
+      background: transparent;
+      color: var(--gold-light);
+      padding: 9px 15px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .cart-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      padding: 150px 25px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(212,175,55,.13), transparent 35%),
+        linear-gradient(135deg,#050505,#121212 50%,#050505);
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border: 1px solid rgba(212,175,55,.13);
+      transform: rotate(45deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+    }
+
+    .diamond {
+      color: var(--gold-light);
+      font-size: 38px;
+      margin-bottom: 20px;
+      text-shadow: 0 0 25px rgba(212,175,55,.4);
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(65px, 12vw, 140px);
+      letter-spacing: 18px;
+      color: var(--gold-light);
+      direction: ltr;
+      margin-left: 18px;
+    }
+
+    .hero h2 {
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: 7px;
+      color: #ddd;
+      margin: 10px 0 25px;
+    }
+
+    .hero p {
+      color: #aaa;
+      max-width: 600px;
+      margin: auto;
+      font-size: 15px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 13px 32px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      transition: .3s;
+    }
+
+    .hero-btn:hover {
+      background: var(--gold);
+      color: #000;
+      transform: translateY(-3px);
+    }
+
+    /* GENERAL */
+
+    section {
+      padding: 100px 25px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--gold);
+      letter-spacing: 4px;
+      direction: ltr;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, serif;
+      font-size: 38px;
+      font-weight: normal;
+    }
+
+    .section-title p {
+      color: #999;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    /* PRODUCTS */
+
+    .products-section {
+      background: #0c0c0c;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .filter {
+      background: transparent;
+      color: #aaa;
+      border: 1px solid #333;
+      padding: 8px 20px;
+      cursor: pointer;
+      border-radius: 30px;
+      transition: .3s;
+    }
+
+    .filter:hover,
+    .filter.active {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .products {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+    }
+
+    .product {
+      background: #111;
+      border: 1px solid #242424;
+      overflow: hidden;
+      transition: .35s;
+      position: relative;
+    }
+
+    .product:hover {
+      transform: translateY(-7px);
+      border-color: rgba(212,175,55,.5);
+      box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    }
+
+    .product-image {
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle,rgba(212,175,55,.12),transparent 55%),
+        #0b0b0b;
+      position: relative;
+    }
+
+    .jewel {
+      font-size: 105px;
+      filter: drop-shadow(0 0 18px rgba(212,175,55,.35));
+      transition: .4s;
+    }
+
+    .product:hover .jewel {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    .product-info {
+      padding: 22px;
+      text-align: right;
+    }
+
+    .product-info h3 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      font-weight: normal;
+      direction: ltr;
+      text-align: left;
+      color: var(--gold-light);
+    }
+
+    .product-info p {
+      color: #888;
+      font-size: 13px;
+      margin: 8px 0 15px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      direction: ltr;
+    }
+
+    .price {
+      color: #eee;
+      font-weight: bold;
+    }
+
+    .add-btn {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 7px 14px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .add-btn:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about-box {
+      border: 1px solid rgba(212,175,55,.2);
+      padding: 55px 35px;
+      background: linear-gradient(135deg,#0d0d0d,#131313);
+    }
+
+    .about-box .mini-diamond {
+      color: var(--gold);
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .about-box h2 {
+      font-family: Georgia,serif;
+      font-size: 34px;
+      color: var(--gold-light);
+      direction: ltr;
+      margin-bottom: 20px;
+    }
+
+    .about-box p {
+      color: #aaa;
+      max-width: 700px;
+      margin: auto;
+      line-height: 2.2;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      background: #0b0b0b;
+      text-align: center;
+    }
+
+    .contact-info {
+      max-width: 700px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .contact-card {
+      padding: 25px 15px;
+      border: 1px solid #252525;
+      background: #101010;
+    }
+
+    .contact-card strong {
+      display: block;
+      color: var(--gold-light);
+      margin-bottom: 7px;
+    }
+
+    .contact-card span {
+      color: #999;
+      font-size: 13px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 45px 20px;
+      background: #050505;
+      text-align: center;
+      border-top: 1px solid rgba(212,175,55,.15);
+    }
+
+    footer .footer-logo {
+      font-family: Georgia,serif;
+      color: var(--gold);
+      font-size: 28px;
+      letter-spacing: 8px;
+      direction: ltr;
+    }
+
+    footer p {
+      color: #666;
+      margin-top: 12px;
+      font-size: 12px;
+    }
+
+    /* CART */
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.7);
+      z-index: 2000;
+      display: none;
+    }
+
+    .cart-overlay.open {
+      display: block;
+    }
+
+    .cart {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: min(400px,100%);
+      background: #101010;
+      border-left: 1px solid rgba(212,175,55,.3);
+      padding: 25px;
+      overflow-y: auto;
+    }
+
+    .cart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #292929;
+    }
+
+    .cart-header h2 {
+      color: var(--gold-light);
+      font-family: Georgia,serif;
+      direction: ltr;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      color: #aaa;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .cart-items {
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #222;
+      padding: 15px 0;
+    }
+
+    .cart-item-icon {
+      font-size: 35px;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-info strong {
+      display: block;
+      color: #eee;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .cart-item-info small {
+      color: #888;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      direction: ltr;
+    }
+
+    .quantity button {
+      width: 25px;
+      height: 25px;
+      background: transparent;
+      border: 1px solid #444;
+      color: #ddd;
+      cursor: pointer;
+    }
+
+    .cart-total {
+      border-top: 1px solid #333;
+      padding-top: 20px;
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      color: var(--gold-light);
+      font-size: 18px;
+    }
+
+    .checkout {
+      width: 100%;
+      margin-top: 20px;
+      padding: 13px;
+      border: none;
+      background: var(--gold);
+      color: #000;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .empty-cart {
+      color: #777;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:800px) {
+
+      nav {
+        height: 68px;
+      }
+
+      nav ul {
+        display: none;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      .hero {
+        padding-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+        letter-spacing: 8px;
+        margin-left: 8px;
+      }
+
+      .hero h2 {
+        font-size: 12px;
+        letter-spacing: 4px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .product-image {
+        height: 240px;
+      }
+
+      .jewel {
+        font-size: 75px;
+      }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:520px) {
+
+      section {
+        padding: 75px 15px;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 280px;
+      }
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <nav>
+
+      <a href="#" class="logo">
+        LUNA
+        <span>JEWELRY</span>
+      </a>
+
+      <ul>
+        <li><a href="#home">خانه</a></li>
+        <li><a href="#products">محصولات</a></li>
+        <li><a href="#about">درباره ما</a></li>
+        <li><a href="#contact">تماس</a></li>
+      </ul>
+
+      <button class="cart-btn" onclick="openCart()">
+        🛍 سبد خرید
+        <span id="cartCount">0</span>
+      </button>
+
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="diamond">◇</div>
+
+      <h1>LUNA</h1>
+
+      <h2>JEWELRY • ELEGANCE • TIMELESS</h2>
+
+      <p>
+        جایی که ظرافت، اصالت و زیبایی در کنار هم
+        جواهری ماندگار برای تو می‌سازند.
+      </p>
+
+      <a href="#products" class="hero-btn">
+        مشاهده مجموعه
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+
+  <section class="products-section" id="products">
+
+    <div class="section-title">
+
+      <small>THE COLLECTION</small>
+
+      <h2>مجموعه LUNA</h2>
+
+      <p>
+        انتخابی برای کسانی که زیبایی متفاوت را می‌بینند.
+      </p>
+
+    </div>
+
+
+    <div class="filters">
+
+      <button class="filter active" data-filter="all">
+        همه
+      </button>
+
+      <button class="filter" data-filter="ring">
+        انگشتر
+      </button>
+
+      <button class="filter" data-filter="necklace">
+        گردنبند
+      </button>
+
+      <button class="filter" data-filter="earring">
+        گوشواره
+      </button>
+
+    </div>
+
+
+    <div class="products">
+
+      <!-- PRODUCT 1 -->
+
+      <article class="product" data-category="ring">
+
+        <div class="product-image">
+          <div class="jewel">💍</div>
+        </div>
+
+        <div class="product-info">
+
+          <h3>Halo Ring</h3>
+
+          <p>
+            انگشتر ظریف با طراحی کلاسیک و لوکس
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              4,850,000 تومان
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Halo Ring',4850000,'💍')">
+              افزودن
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 2 -->
+
+      <article class="product" data-category="necklace">
+
+        <div class="product-image">
+          <div class="jewel">📿</div>
+        </div>
+
+        <div class="product-info">
+
+          <h3>Luna Pendant</h3>
+
+          <p>
+            گردنبند ظریف با الهام از ماه
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              6,200,000 تومان
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Luna Pendant',6200000,'📿')">
+              افزودن
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 3 -->
+
+      <article class="product" data-category="earring">
+
+        <div class="product-image">
+          <div class="jewel">✨</div>
+        </div>
+
+        <div class="product-info">
+
+          <h3>Élan Earrings</h3>
+
+          <p>
+            گوشواره‌ای ظریف برای درخشش بیشتر
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              3,950,000 تومان
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Élan Earrings',3950000,'✨')">
+              افزودن
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 4 -->
+
+      <article class="product" data-category="ring">
+
+        <div class="product-image">
+          <div class="jewel">💎</div>
+        </div>
+
+        <div class="product-info">
+
+          <h3>Solitaire</h3>
+
+          <p>
+            طراحی ساده و باشکوه با الهام از الماس
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              7,400,000 تومان
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Solitaire',7400000,'💎')">
+              افزودن
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 5 -->
+
+      <article class="product" data-category="necklace">
+
+        <div class="product-image">
+          <div class="jewel">◇</div>
+        </div>
+
+        <div class="product-info">
+
+          <h3>Celeste Chain</h3>
+
+          <p>
+            زنجیر ظریف با فرم مینیمال
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              5,650,000 تومان
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Celeste Chain',5650000,'◇')">
+              افزودن
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- PRODUCT 6 -->
+
+      <article class="product" data-category="earring">
+
+        <div class="product-image">
+          <div class="jewel">✦</div>
+        </div>
+
+        <div class="product-info">
+
+          <h3>Nova Drop</h3>
+
+          <p>
+            گوشواره‌ای خاص با طراحی مدرن
+          </p>
+
+          <div class="product-bottom">
+
+            <span class="price">
+              4,300,000 تومان
+            </span>
+
+            <button
+              class="add-btn"
+              onclick="addToCart('Nova Drop',4300000,'✦')">
+              افزودن
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="section-title">
+        <small>OUR STORY</small>
+        <h2>درباره LUNA</h2>
+      </div>
+
+      <div class="about-box">
+
+        <div class="mini-diamond">◇</div>
+
+        <h2>LUNA JEWELRY</h2>
+
+        <p>
+          در LUNA باور داریم یک جواهر فقط یک اکسسوری نیست؛
+          بخشی از شخصیت و داستان توست.
+          ما طراحی‌های ظریف، کلاسیک و ماندگار را با
+          نگاهی مدرن ترکیب می‌کنیم تا هر قطعه،
+          حس خاص بودن را به تو هدیه دهد.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+
+      <small>CONTACT</small>
+
+      <h2>با ما در ارتباط باشید</h2>
+
+    </div>
+
+    <div class="contact-info">
+
+      <div class="contact-card">
+        <strong>تلفن</strong>
+        <span dir="ltr">09026543241</span>
+      </div>
+
+      <div class="contact-card">
+        <strong>Instagram</strong>
+        <span>@luna.jewelry</span>
+      </div>
+
+      <div class="contact-card">
+        <strong>ساعت پاسخگویی</strong>
+        <span>هر روز 10:00 تا 21:00</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-logo">
+      LUNA
+    </div>
+
+    <p>
+      © 2026 LUNA Jewelry — All Rights Reserved
+    </p>
+
+  </footer>
+
+
+  <!-- CART -->
+
+  <div class="cart-overlay" id="cartOverlay">
+
+    <div class="cart">
+
+      <div class="cart-header">
+
+        <h2>YOUR CART</h2>
+
+        <button
+          class="close-cart"
+          onclick="closeCart()">
+          ×
+        </button>
+
+      </div>
+
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-total">
+
+        <span>مجموع:</span>
+
+        <strong id="cartTotal">
+          0 تومان
+        </strong>
+
+      </div>
+
+      <button
+        class="checkout"
+        onclick="checkout()">
+        ادامه خرید
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script>
+
+    /* PRODUCTS FILTER */
+
+    const filters =
+      document.querySelectorAll('.filter');
+
+    const products =
+      document.querySelectorAll('.product');
+
+    filters.forEach(button => {
+
+      button.addEventListener('click', () => {
+
+        filters.forEach(btn =>
+          btn.classList.remove('active')
+        );
+
+        button.classList.add('active');
+
+        const category =
+          button.dataset.filter;
+
+        products.forEach(product => {
+
+          if (
+            category === 'all' ||
+            product.dataset.category === category
+          ) {
+            product.style.display = '';
+          } else {
+            product.style.display = 'none';
+          }
+
+        });
+
+      });
+
+    });
+
+
+    /* CART */
+
+    let cart = [];
+
+
+    function addToCart(name, price, icon) {
+
+      const existing =
+        cart.find(item => item.name === name);
+
+      if (existing) {
+
+        existing.quantity++;
+
+      } else {
+
+        cart.push({
+          name,
+          price,
+          icon,
+          quantity: 1
+        });
+
+      }
+
+      updateCart();
+
+      openCart();
+    }
+
+
+    function updateCart() {
+
+      const cartItems =
+        document.getElementById('cartItems');
+
+      const cartCount =
+        document.getElementById('cartCount');
+
+      const cartTotal =
+        document.getElementById('cartTotal');
+
+      let total = 0;
+      let count = 0;
+
+      cartItems.innerHTML = '';
+
+      if (cart.length === 0) {
+
+        cartItems.innerHTML =
+          '<div class="empty-cart">سبد خرید شما خالی است.</div>';
+
+      }
+
+      cart.forEach((item, index) => {
+
+        total += item.price * item.quantity;
+
+        count += item.quantity;
+
+        const element =
+          document.createElement('div');
+
+        element.className = 'cart-item';
+
+        element.innerHTML = `
+
+          <div class="cart-item-icon">
+            ${item.icon}
+          </div>
+
+          <div class="cart-item-info">
+
+            <strong>${item.name}</strong>
+
+            <small>
+              ${formatPrice(item.price)} تومان
+            </small>
+
+          </div>
+
+          <div class="quantity">
+
+            <button
+              onclick="changeQuantity(${index},-1)">
+              −
+            </button>
+
+            <span>${item.quantity}</span>
+
+            <button
+              onclick="changeQuantity(${index},1)">
+              +
+            </button>
+
+          </div>
+
+        `;
+
+        cartItems.appendChild(element);
+
+      });
+
+      cartCount.textContent = count;
+
+      cartTotal.textContent =
+        formatPrice(total) + ' تومان';
+
+    }
+
+
+    function changeQuantity(index, change) {
+
+      cart[index].quantity += change;
+
+      if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+      }
+
+      updateCart();
+
+    }
+
+
+    function formatPrice(number) {
+
+      return number.toLocaleString('fa-IR');
+
+    }
+
+
+    function openCart() {
+
+      document
+        .getElementById('cartOverlay')
+        .classList.add('open');
+
+    }
+
+
+    function closeCart() {
+
+      document
+        .getElementById('cartOverlay')
+        .classList.remove('open');
+
+    }
+
+
+    function checkout() {
+
+      if (cart.length === 0) {
+
+        alert('سبد خرید شما خالی است.');
+
+        return;
+      }
+
+      alert(
+        'سفارش شما ثبت شد. برای اتصال به درگاه پرداخت باید سیستم پرداخت واقعی به سایت اضافه شود.'
+      );
+
+    }
+
+
+    document
+      .getElementById('cartOverlay')
+      .addEventListener('click', function(e) {
+
+        if (e.target === this) {
+          closeCart();
+        }
+
+      });
+
+
+    updateCart();
+
+  </script>
+
+</body>
+</html>
