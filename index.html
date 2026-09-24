@@ -1,1283 +1,2490 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>LUNA Jewelry | جواهرات لوکس</title>
-
-  <meta name="description" content="LUNA Jewelry - جواهرات لوکس با طراحی ظریف و ماندگار">
-  <meta name="theme-color" content="#080808">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: #080808;
-      color: #f5f1e8;
-      line-height: 1.8;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-    }
-
-    :root {
-      --gold: #d4af37;
-      --gold-light: #f3d77b;
-      --dark: #080808;
-      --dark2: #111111;
-      --gray: #a7a7a7;
-      --white: #f8f5ed;
-    }
-
-    /* NAVBAR */
-
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(8,8,8,.88);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(212,175,55,.18);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: auto;
-      height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 25px;
-    }
-
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 30px;
-      letter-spacing: 8px;
-      color: var(--gold-light);
-      direction: ltr;
-    }
-
-    .logo span {
-      display: block;
-      font-family: Tahoma;
-      font-size: 8px;
-      letter-spacing: 4px;
-      color: #aaa;
-      text-align: center;
-      margin-top: -7px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 32px;
-    }
-
-    nav ul a {
-      color: #ddd;
-      font-size: 14px;
-      transition: .3s;
-    }
-
-    nav ul a:hover {
-      color: var(--gold-light);
-    }
-
-    .cart-btn {
-      border: 1px solid rgba(212,175,55,.5);
-      background: transparent;
-      color: var(--gold-light);
-      padding: 9px 15px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: .3s;
-    }
-
-    .cart-btn:hover {
-      background: var(--gold);
-      color: #000;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      padding: 150px 25px 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 50% 40%, rgba(212,175,55,.13), transparent 35%),
-        linear-gradient(135deg,#050505,#121212 50%,#050505);
-    }
-
-    .hero:before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border: 1px solid rgba(212,175,55,.13);
-      transform: rotate(45deg);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 850px;
-    }
-
-    .diamond {
-      color: var(--gold-light);
-      font-size: 38px;
-      margin-bottom: 20px;
-      text-shadow: 0 0 25px rgba(212,175,55,.4);
-    }
-
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(65px, 12vw, 140px);
-      letter-spacing: 18px;
-      color: var(--gold-light);
-      direction: ltr;
-      margin-left: 18px;
-    }
-
-    .hero h2 {
-      font-size: 16px;
-      font-weight: normal;
-      letter-spacing: 7px;
-      color: #ddd;
-      margin: 10px 0 25px;
-    }
-
-    .hero p {
-      color: #aaa;
-      max-width: 600px;
-      margin: auto;
-      font-size: 15px;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 13px 32px;
-      border: 1px solid var(--gold);
-      color: var(--gold-light);
-      transition: .3s;
-    }
-
-    .hero-btn:hover {
-      background: var(--gold);
-      color: #000;
-      transform: translateY(-3px);
-    }
-
-    /* GENERAL */
-
-    section {
-      padding: 100px 25px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title small {
-      color: var(--gold);
-      letter-spacing: 4px;
-      direction: ltr;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .section-title h2 {
-      font-family: Georgia, serif;
-      font-size: 38px;
-      font-weight: normal;
-    }
-
-    .section-title p {
-      color: #999;
-      margin-top: 8px;
-      font-size: 14px;
-    }
-
-    /* PRODUCTS */
-
-    .products-section {
-      background: #0c0c0c;
-    }
-
-    .filters {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-
-    .filter {
-      background: transparent;
-      color: #aaa;
-      border: 1px solid #333;
-      padding: 8px 20px;
-      cursor: pointer;
-      border-radius: 30px;
-      transition: .3s;
-    }
-
-    .filter:hover,
-    .filter.active {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .products {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 25px;
-    }
-
-    .product {
-      background: #111;
-      border: 1px solid #242424;
-      overflow: hidden;
-      transition: .35s;
-      position: relative;
-    }
-
-    .product:hover {
-      transform: translateY(-7px);
-      border-color: rgba(212,175,55,.5);
-      box-shadow: 0 15px 40px rgba(0,0,0,.5);
-    }
-
-    .product-image {
-      height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background:
-        radial-gradient(circle,rgba(212,175,55,.12),transparent 55%),
-        #0b0b0b;
-      position: relative;
-    }
-
-    .jewel {
-      font-size: 105px;
-      filter: drop-shadow(0 0 18px rgba(212,175,55,.35));
-      transition: .4s;
-    }
-
-    .product:hover .jewel {
-      transform: scale(1.1) rotate(4deg);
-    }
-
-    .product-info {
-      padding: 22px;
-      text-align: right;
-    }
-
-    .product-info h3 {
-      font-family: Georgia, serif;
-      font-size: 22px;
-      font-weight: normal;
-      direction: ltr;
-      text-align: left;
-      color: var(--gold-light);
-    }
-
-    .product-info p {
-      color: #888;
-      font-size: 13px;
-      margin: 8px 0 15px;
-    }
-
-    .product-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      direction: ltr;
-    }
-
-    .price {
-      color: #eee;
-      font-weight: bold;
-    }
-
-    .add-btn {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold-light);
-      padding: 7px 14px;
-      cursor: pointer;
-      transition: .3s;
-    }
-
-    .add-btn:hover {
-      background: var(--gold);
-      color: #000;
-    }
-
-    /* ABOUT */
-
-    .about {
-      max-width: 1000px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .about-box {
-      border: 1px solid rgba(212,175,55,.2);
-      padding: 55px 35px;
-      background: linear-gradient(135deg,#0d0d0d,#131313);
-    }
-
-    .about-box .mini-diamond {
-      color: var(--gold);
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .about-box h2 {
-      font-family: Georgia,serif;
-      font-size: 34px;
-      color: var(--gold-light);
-      direction: ltr;
-      margin-bottom: 20px;
-    }
-
-    .about-box p {
-      color: #aaa;
-      max-width: 700px;
-      margin: auto;
-      line-height: 2.2;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: #0b0b0b;
-      text-align: center;
-    }
-
-    .contact-info {
-      max-width: 700px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 15px;
-    }
-
-    .contact-card {
-      padding: 25px 15px;
-      border: 1px solid #252525;
-      background: #101010;
-    }
-
-    .contact-card strong {
-      display: block;
-      color: var(--gold-light);
-      margin-bottom: 7px;
-    }
-
-    .contact-card span {
-      color: #999;
-      font-size: 13px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 45px 20px;
-      background: #050505;
-      text-align: center;
-      border-top: 1px solid rgba(212,175,55,.15);
-    }
-
-    footer .footer-logo {
-      font-family: Georgia,serif;
-      color: var(--gold);
-      font-size: 28px;
-      letter-spacing: 8px;
-      direction: ltr;
-    }
-
-    footer p {
-      color: #666;
-      margin-top: 12px;
-      font-size: 12px;
-    }
-
-    /* CART */
-
-    .cart-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.7);
-      z-index: 2000;
-      display: none;
-    }
-
-    .cart-overlay.open {
-      display: block;
-    }
-
-    .cart {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: min(400px,100%);
-      background: #101010;
-      border-left: 1px solid rgba(212,175,55,.3);
-      padding: 25px;
-      overflow-y: auto;
-    }
-
-    .cart-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #292929;
-    }
-
-    .cart-header h2 {
-      color: var(--gold-light);
-      font-family: Georgia,serif;
-      direction: ltr;
-    }
-
-    .close-cart {
-      background: none;
-      border: none;
-      color: #aaa;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    .cart-items {
-      padding: 20px 0;
-    }
-
-    .cart-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      border-bottom: 1px solid #222;
-      padding: 15px 0;
-    }
-
-    .cart-item-icon {
-      font-size: 35px;
-    }
-
-    .cart-item-info {
-      flex: 1;
-    }
-
-    .cart-item-info strong {
-      display: block;
-      color: #eee;
-      direction: ltr;
-      text-align: left;
-    }
-
-    .cart-item-info small {
-      color: #888;
-    }
-
-    .quantity {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      direction: ltr;
-    }
-
-    .quantity button {
-      width: 25px;
-      height: 25px;
-      background: transparent;
-      border: 1px solid #444;
-      color: #ddd;
-      cursor: pointer;
-    }
-
-    .cart-total {
-      border-top: 1px solid #333;
-      padding-top: 20px;
-      margin-top: 10px;
-      display: flex;
-      justify-content: space-between;
-      color: var(--gold-light);
-      font-size: 18px;
-    }
-
-    .checkout {
-      width: 100%;
-      margin-top: 20px;
-      padding: 13px;
-      border: none;
-      background: var(--gold);
-      color: #000;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .empty-cart {
-      color: #777;
-      text-align: center;
-      padding: 50px 0;
-    }
-
-    /* MOBILE */
-
-    @media(max-width:800px) {
-
-      nav {
-        height: 68px;
-      }
-
-      nav ul {
-        display: none;
-      }
-
-      .logo {
-        font-size: 25px;
-      }
-
-      .hero {
-        padding-top: 120px;
-      }
-
-      .hero h1 {
-        font-size: 65px;
-        letter-spacing: 8px;
-        margin-left: 8px;
-      }
-
-      .hero h2 {
-        font-size: 12px;
-        letter-spacing: 4px;
-      }
-
-      .products {
-        grid-template-columns: repeat(2,1fr);
-      }
-
-      .product-image {
-        height: 240px;
-      }
-
-      .jewel {
-        font-size: 75px;
-      }
-
-      .contact-info {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media(max-width:520px) {
-
-      section {
-        padding: 75px 15px;
-      }
-
-      .products {
-        grid-template-columns: 1fr;
-      }
-
-      .product-image {
-        height: 280px;
-      }
-
-      .hero h1 {
-        font-size: 54px;
-      }
-
-      .section-title h2 {
-        font-size: 30px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b0b">
+
+<title>LUNA Jewelry | جواهرات لوکس</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#f5f1e8;
+    font-family:"Vazirmatn",sans-serif;
+    line-height:1.8;
+    overflow-x:hidden;
+}
+
+button,
+input{
+    font-family:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+}
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --gold:#d4af37;
+    --gold-light:#f1d77b;
+    --gold-dark:#96771c;
+    --black:#080808;
+    --black2:#101010;
+    --black3:#171717;
+    --text:#f5f1e8;
+    --muted:#aaa39a;
+    --border:rgba(212,175,55,.22);
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#080808;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#66521d;
+    border-radius:10px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    height:78px;
+    background:rgba(8,8,8,.92);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(212,175,55,.12);
+    z-index:1000;
+}
+
+.nav{
+    max-width:1250px;
+    height:100%;
+    margin:auto;
+    padding:0 25px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-diamond{
+    width:15px;
+    height:15px;
+    border:1px solid var(--gold);
+    transform:rotate(45deg);
+    position:relative;
+}
+
+.logo-diamond:after{
+    content:"";
+    position:absolute;
+    inset:3px;
+    border:1px solid rgba(212,175,55,.5);
+}
+
+.logo-text{
+    font-family:"Cormorant Garamond",serif;
+    font-size:32px;
+    letter-spacing:5px;
+    color:var(--gold-light);
+}
+
+.menu{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
+.menu a{
+    color:#ddd6c8;
+    font-size:14px;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--gold-light);
+}
+
+.header-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.icon-btn{
+    width:42px;
+    height:42px;
+    border:1px solid var(--border);
+    background:#101010;
+    color:var(--gold-light);
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.cart-count{
+    position:absolute;
+    top:-4px;
+    left:-3px;
+    min-width:19px;
+    height:19px;
+    background:var(--gold);
+    color:#111;
+    border-radius:50%;
+    font-size:11px;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu-btn{
+    display:none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 35%,rgba(212,175,55,.13),transparent 30%),
+        linear-gradient(135deg,#070707,#111,#070707);
+}
+
+.hero:before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    border:1px solid rgba(212,175,55,.08);
+    border-radius:50%;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    border:1px solid rgba(212,175,55,.05);
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:850px;
+    padding:100px 20px 60px;
+}
+
+.hero-diamond{
+    width:30px;
+    height:30px;
+    border:1px solid var(--gold);
+    transform:rotate(45deg);
+    margin:0 auto 35px;
+    position:relative;
+}
+
+.hero-diamond:before,
+.hero-diamond:after{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(212,175,55,.45);
+}
+
+.hero-diamond:before{
+    inset:5px;
+}
+
+.hero-diamond:after{
+    inset:10px;
+}
+
+.hero h1{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(80px,15vw,180px);
+    line-height:.8;
+    letter-spacing:14px;
+    font-weight:500;
+    color:#eee5d1;
+    text-shadow:0 0 45px rgba(212,175,55,.12);
+}
+
+.hero-subtitle{
+    margin-top:25px;
+    font-size:16px;
+    letter-spacing:4px;
+    color:var(--gold-light);
+}
+
+.hero-text{
+    max-width:620px;
+    margin:25px auto 35px;
+    color:#aaa39a;
+    font-size:14px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    border:1px solid var(--gold);
+    background:var(--gold);
+    color:#0b0b0b;
+    padding:12px 28px;
+    border-radius:2px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:transparent;
+    color:var(--gold-light);
+}
+
+.btn-outline{
+    background:transparent;
+    color:var(--gold-light);
+}
+
+.btn-outline:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:100px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    font-size:12px;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.section-title h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:50px;
+    font-weight:500;
+}
+
+.section-title p{
+    color:var(--muted);
+    font-size:14px;
+    max-width:650px;
+    margin:10px auto;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section{
+    background:#0b0b0b;
+}
+
+.filters{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.filter{
+    border:1px solid var(--border);
+    background:#101010;
+    color:#bcb5aa;
+    padding:9px 20px;
+    border-radius:2px;
+    transition:.3s;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+.search-box{
+    max-width:450px;
+    margin:0 auto 35px;
+    position:relative;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 18px;
+    background:#101010;
+    color:#fff;
+    border:1px solid var(--border);
+    outline:none;
+    border-radius:2px;
+}
+
+.search-box input:focus{
+    border-color:var(--gold);
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.product-card{
+    background:#111;
+    border:1px solid rgba(212,175,55,.13);
+    transition:.35s;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(212,175,55,.45);
+    box-shadow:0 15px 45px rgba(0,0,0,.35);
+}
+
+.product-image{
+    height:260px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+        radial-gradient(circle,rgba(212,175,55,.1),transparent 55%),
+        #0c0c0c;
+    font-size:75px;
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-category{
+    color:var(--gold);
+    font-size:11px;
+}
+
+.product-name{
+    font-family:"Cormorant Garamond",serif;
+    font-size:28px;
+    margin:4px 0;
+}
+
+.product-description{
+    color:#888;
+    font-size:12px;
+    min-height:48px;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+.price{
+    color:var(--gold-light);
+    font-weight:600;
+}
+
+.add-cart{
+    border:1px solid var(--border);
+    background:transparent;
+    color:var(--gold-light);
+    padding:8px 13px;
+    font-size:12px;
+    transition:.3s;
+}
+
+.add-cart:hover{
+    background:var(--gold);
+    color:#111;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    background:
+        linear-gradient(rgba(8,8,8,.94),rgba(8,8,8,.96)),
+        radial-gradient(circle at 80% 50%,rgba(212,175,55,.1),transparent 35%);
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-art{
+    min-height:450px;
+    border:1px solid var(--border);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.about-art:before,
+.about-art:after{
+    content:"";
+    position:absolute;
+    border:1px solid rgba(212,175,55,.18);
+    border-radius:50%;
+}
+
+.about-art:before{
+    width:300px;
+    height:300px;
+}
+
+.about-art:after{
+    width:220px;
+    height:220px;
+}
+
+.big-luna{
+    font-family:"Cormorant Garamond",serif;
+    font-size:90px;
+    letter-spacing:10px;
+    color:var(--gold);
+    z-index:2;
+}
+
+.about-content h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:52px;
+    font-weight:500;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#aaa39a;
+    margin-bottom:18px;
+    font-size:14px;
+}
+
+.about-points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:30px;
+}
+
+.about-point{
+    padding:15px;
+    border:1px solid var(--border);
+    background:#101010;
+}
+
+.about-point strong{
+    display:block;
+    color:var(--gold-light);
+    margin-bottom:3px;
+}
+
+.about-point span{
+    color:#888;
+    font-size:12px;
+}
+
+/* =========================
+   GUIDE
+========================= */
+
+.guide{
+    background:#0c0c0c;
+}
+
+.guide-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.guide-card{
+    border:1px solid var(--border);
+    padding:28px 20px;
+    background:#101010;
+    text-align:center;
+    transition:.3s;
+}
+
+.guide-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+}
+
+.guide-number{
+    font-family:"Cormorant Garamond",serif;
+    font-size:45px;
+    color:var(--gold);
+}
+
+.guide-card h3{
+    margin:8px 0;
+}
+
+.guide-card p{
+    color:#888;
+    font-size:12px;
+}
+
+/* =========================
+   SUPPORT
+========================= */
+
+.support{
+    background:#080808;
+}
+
+.support-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.faq{
+    border:1px solid var(--border);
+    margin-bottom:10px;
+    background:#101010;
+}
+
+.faq-question{
+    width:100%;
+    padding:17px;
+    background:none;
+    border:0;
+    color:#eee;
+    text-align:right;
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:.3s;
+    color:#888;
+    font-size:13px;
+    padding:0 17px;
+}
+
+.faq.open .faq-answer{
+    max-height:150px;
+    padding:0 17px 17px;
+}
+
+.contact-box{
+    border:1px solid var(--border);
+    padding:30px;
+    background:#101010;
+}
+
+.contact-item{
+    padding:18px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.contact-item:last-child{
+    border-bottom:0;
+}
+
+.contact-label{
+    color:var(--gold);
+    font-size:12px;
+}
+
+.contact-value{
+    color:#eee;
+    margin-top:3px;
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter{
+    background:
+        radial-gradient(circle at center,rgba(212,175,55,.1),transparent 40%),
+        #0d0d0d;
+    text-align:center;
+}
+
+.newsletter-form{
+    max-width:550px;
+    margin:25px auto 0;
+    display:flex;
+}
+
+.newsletter-form input{
+    flex:1;
+    padding:14px;
+    background:#111;
+    border:1px solid var(--border);
+    color:#fff;
+    outline:none;
+}
+
+.newsletter-form button{
+    padding:0 25px;
+    background:var(--gold);
+    border:1px solid var(--gold);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:55px 20px 25px;
+    background:#050505;
+    border-top:1px solid rgba(212,175,55,.12);
+}
+
+.footer-grid{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-family:"Cormorant Garamond",serif;
+    font-size:38px;
+    letter-spacing:6px;
+    color:var(--gold);
+}
+
+.footer-description{
+    color:#777;
+    font-size:12px;
+    max-width:350px;
+    margin-top:12px;
+}
+
+.footer-col h4{
+    color:#eee;
+    margin-bottom:12px;
+}
+
+.footer-col a{
+    display:block;
+    color:#777;
+    font-size:12px;
+    margin:8px 0;
+}
+
+.footer-col a:hover{
+    color:var(--gold);
+}
+
+.copyright{
+    max-width:1200px;
+    margin:45px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.06);
+    text-align:center;
+    color:#555;
+    font-size:11px;
+}
+
+/* =========================
+   CART DRAWER
+========================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:1998;
+    display:none;
+}
+
+.overlay.active{
+    display:block;
+}
+
+.cart-drawer{
+    position:fixed;
+    top:0;
+    left:-430px;
+    width:420px;
+    max-width:92%;
+    height:100vh;
+    background:#0d0d0d;
+    border-right:1px solid var(--border);
+    z-index:1999;
+    transition:.35s;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart-drawer.open{
+    left:0;
+}
+
+.cart-head{
+    padding:25px;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.cart-head h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:30px;
+}
+
+.close-cart{
+    background:none;
+    border:0;
+    color:#aaa;
+    font-size:24px;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:20px;
+}
+
+.empty-cart{
+    text-align:center;
+    color:#777;
+    margin-top:100px;
+}
+
+.cart-item{
+    display:flex;
+    gap:12px;
+    padding:15px 0;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.cart-item-image{
+    width:70px;
+    height:70px;
+    background:#151515;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-name{
+    color:#eee;
+}
+
+.cart-item-price{
+    color:var(--gold);
+    font-size:12px;
+}
+
+.qty{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    margin-top:7px;
+}
+
+.qty button{
+    width:24px;
+    height:24px;
+    background:#191919;
+    border:1px solid var(--border);
+    color:var(--gold);
+}
+
+.remove{
+    color:#777;
+    background:none;
+    border:0;
+    font-size:11px;
+}
+
+.cart-footer{
+    padding:20px;
+    border-top:1px solid var(--border);
+}
+
+.total{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:15px;
+}
+
+.total strong{
+    color:var(--gold-light);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#151515;
+    border:1px solid var(--gold);
+    color:#eee;
+    padding:13px 20px;
+    z-index:3000;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.3s;
+    font-size:13px;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    z-index:2500;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.active{
+    display:flex;
+}
+
+.modal-box{
+    width:500px;
+    max-width:100%;
+    background:#111;
+    border:1px solid var(--border);
+    padding:35px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    left:15px;
+    top:10px;
+    background:none;
+    border:0;
+    color:#999;
+    font-size:24px;
+}
+
+.modal-box h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:35px;
+    color:var(--gold);
+    margin-bottom:15px;
+}
+
+.checkout-input{
+    width:100%;
+    background:#0b0b0b;
+    color:#fff;
+    border:1px solid var(--border);
+    padding:12px;
+    margin:7px 0;
+    outline:none;
+}
+
+.checkout-input:focus{
+    border-color:var(--gold);
+}
+
+.checkout-summary{
+    margin:15px 0;
+    padding:15px;
+    background:#0b0b0b;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .menu{
+        display:none;
+    }
+
+    .mobile-menu-btn{
+        display:flex;
+        width:42px;
+        height:42px;
+        border:1px solid var(--border);
+        background:#101010;
+        color:var(--gold);
+        align-items:center;
+        justify-content:center;
+    }
+
+    .nav.mobile-open .menu{
+        position:absolute;
+        top:78px;
+        right:0;
+        left:0;
+        display:flex;
+        flex-direction:column;
+        gap:0;
+        background:#0c0c0c;
+        border-bottom:1px solid var(--border);
+    }
+
+    .nav.mobile-open .menu a{
+        width:100%;
+        padding:15px 25px;
+        border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .about-grid,
+    .support-grid{
+        grid-template-columns:1fr;
+    }
+
+    .guide-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        height:68px;
+    }
+
+    .nav{
+        padding:0 15px;
+    }
+
+    .logo-text{
+        font-size:27px;
+    }
+
+    .hero-content{
+        padding-top:110px;
+    }
+
+    .hero h1{
+        font-size:72px;
+        letter-spacing:7px;
+    }
+
+    .hero-subtitle{
+        font-size:12px;
+        letter-spacing:2px;
+    }
+
+    section{
+        padding:75px 15px;
+    }
+
+    .section-title h2{
+        font-size:40px;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .guide-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-points{
+        grid-template-columns:1fr;
+    }
+
+    .about-art{
+        min-height:320px;
+    }
+
+    .big-luna{
+        font-size:65px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+        gap:8px;
+    }
+
+    .newsletter-form button{
+        padding:13px;
+    }
+
+    .cart-drawer{
+        width:92%;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
 
-  <header>
-    <nav>
+<header>
 
-      <a href="#" class="logo">
-        LUNA
-        <span>JEWELRY</span>
-      </a>
+<nav class="nav" id="nav">
 
-      <ul>
-        <li><a href="#home">خانه</a></li>
-        <li><a href="#products">محصولات</a></li>
-        <li><a href="#about">درباره ما</a></li>
-        <li><a href="#contact">تماس</a></li>
-      </ul>
+    <a href="#home" class="logo">
+        <span class="logo-diamond"></span>
+        <span class="logo-text">LUNA</span>
+    </a>
 
-      <button class="cart-btn" onclick="openCart()">
-        🛍 سبد خرید
-        <span id="cartCount">0</span>
-      </button>
+    <div class="menu">
 
-    </nav>
-  </header>
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+        <a href="#guide">راهنمای خرید</a>
+        <a href="#support">پشتیبانی</a>
+
+    </div>
+
+    <div class="header-actions">
+
+        <button class="icon-btn" onclick="openCart()" aria-label="سبد خرید">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</nav>
+
+</header>
 
 
-  <!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
-  <section class="hero" id="home">
+<main>
+
+<section class="hero" id="home">
 
     <div class="hero-content">
 
-      <div class="diamond">◇</div>
+        <div class="hero-diamond"></div>
 
-      <h1>LUNA</h1>
+        <h1>LUNA</h1>
 
-      <h2>JEWELRY • ELEGANCE • TIMELESS</h2>
-
-      <p>
-        جایی که ظرافت، اصالت و زیبایی در کنار هم
-        جواهری ماندگار برای تو می‌سازند.
-      </p>
-
-      <a href="#products" class="hero-btn">
-        مشاهده مجموعه
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- PRODUCTS -->
-
-  <section class="products-section" id="products">
-
-    <div class="section-title">
-
-      <small>THE COLLECTION</small>
-
-      <h2>مجموعه LUNA</h2>
-
-      <p>
-        انتخابی برای کسانی که زیبایی متفاوت را می‌بینند.
-      </p>
-
-    </div>
-
-
-    <div class="filters">
-
-      <button class="filter active" data-filter="all">
-        همه
-      </button>
-
-      <button class="filter" data-filter="ring">
-        انگشتر
-      </button>
-
-      <button class="filter" data-filter="necklace">
-        گردنبند
-      </button>
-
-      <button class="filter" data-filter="earring">
-        گوشواره
-      </button>
-
-    </div>
-
-
-    <div class="products">
-
-      <!-- PRODUCT 1 -->
-
-      <article class="product" data-category="ring">
-
-        <div class="product-image">
-          <div class="jewel">💍</div>
+        <div class="hero-subtitle">
+            JEWELRY • ELEGANCE • TIMELESS BEAUTY
         </div>
 
-        <div class="product-info">
-
-          <h3>Halo Ring</h3>
-
-          <p>
-            انگشتر ظریف با طراحی کلاسیک و لوکس
-          </p>
-
-          <div class="product-bottom">
-
-            <span class="price">
-              4,850,000 تومان
-            </span>
-
-            <button
-              class="add-btn"
-              onclick="addToCart('Halo Ring',4850000,'💍')">
-              افزودن
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 2 -->
-
-      <article class="product" data-category="necklace">
-
-        <div class="product-image">
-          <div class="jewel">📿</div>
-        </div>
-
-        <div class="product-info">
-
-          <h3>Luna Pendant</h3>
-
-          <p>
-            گردنبند ظریف با الهام از ماه
-          </p>
-
-          <div class="product-bottom">
-
-            <span class="price">
-              6,200,000 تومان
-            </span>
-
-            <button
-              class="add-btn"
-              onclick="addToCart('Luna Pendant',6200000,'📿')">
-              افزودن
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 3 -->
-
-      <article class="product" data-category="earring">
-
-        <div class="product-image">
-          <div class="jewel">✨</div>
-        </div>
-
-        <div class="product-info">
-
-          <h3>Élan Earrings</h3>
-
-          <p>
-            گوشواره‌ای ظریف برای درخشش بیشتر
-          </p>
-
-          <div class="product-bottom">
-
-            <span class="price">
-              3,950,000 تومان
-            </span>
-
-            <button
-              class="add-btn"
-              onclick="addToCart('Élan Earrings',3950000,'✨')">
-              افزودن
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 4 -->
-
-      <article class="product" data-category="ring">
-
-        <div class="product-image">
-          <div class="jewel">💎</div>
-        </div>
-
-        <div class="product-info">
-
-          <h3>Solitaire</h3>
-
-          <p>
-            طراحی ساده و باشکوه با الهام از الماس
-          </p>
-
-          <div class="product-bottom">
-
-            <span class="price">
-              7,400,000 تومان
-            </span>
-
-            <button
-              class="add-btn"
-              onclick="addToCart('Solitaire',7400000,'💎')">
-              افزودن
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 5 -->
-
-      <article class="product" data-category="necklace">
-
-        <div class="product-image">
-          <div class="jewel">◇</div>
-        </div>
-
-        <div class="product-info">
-
-          <h3>Celeste Chain</h3>
-
-          <p>
-            زنجیر ظریف با فرم مینیمال
-          </p>
-
-          <div class="product-bottom">
-
-            <span class="price">
-              5,650,000 تومان
-            </span>
-
-            <button
-              class="add-btn"
-              onclick="addToCart('Celeste Chain',5650000,'◇')">
-              افزودن
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-      <!-- PRODUCT 6 -->
-
-      <article class="product" data-category="earring">
-
-        <div class="product-image">
-          <div class="jewel">✦</div>
-        </div>
-
-        <div class="product-info">
-
-          <h3>Nova Drop</h3>
-
-          <p>
-            گوشواره‌ای خاص با طراحی مدرن
-          </p>
-
-          <div class="product-bottom">
-
-            <span class="price">
-              4,300,000 تومان
-            </span>
-
-            <button
-              class="add-btn"
-              onclick="addToCart('Nova Drop',4300000,'✦')">
-              افزودن
-            </button>
-
-          </div>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section id="about">
-
-    <div class="about">
-
-      <div class="section-title">
-        <small>OUR STORY</small>
-        <h2>درباره LUNA</h2>
-      </div>
-
-      <div class="about-box">
-
-        <div class="mini-diamond">◇</div>
-
-        <h2>LUNA JEWELRY</h2>
-
-        <p>
-          در LUNA باور داریم یک جواهر فقط یک اکسسوری نیست؛
-          بخشی از شخصیت و داستان توست.
-          ما طراحی‌های ظریف، کلاسیک و ماندگار را با
-          نگاهی مدرن ترکیب می‌کنیم تا هر قطعه،
-          حس خاص بودن را به تو هدیه دهد.
+        <p class="hero-text">
+            جایی که ظرافت، اصالت و زیبایی ماندگار در کنار یکدیگر قرار می‌گیرند.
+            مجموعه‌ای از جواهرات برای کسانی که خاص بودن را انتخاب می‌کنند.
         </p>
 
-      </div>
+        <div class="hero-buttons">
+
+            <a href="#products" class="btn">
+                مشاهده محصولات
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+                داستان LUNA
+            </a>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- CONTACT -->
+<!-- =========================
+     PRODUCTS
+========================= -->
 
-  <section class="contact" id="contact">
+<section class="products-section" id="products">
 
-    <div class="section-title">
+<div class="container">
 
-      <small>CONTACT</small>
+<div class="section-title">
 
-      <h2>با ما در ارتباط باشید</h2>
+    <div class="eyebrow">LUNA COLLECTION</div>
 
-    </div>
-
-    <div class="contact-info">
-
-      <div class="contact-card">
-        <strong>تلفن</strong>
-        <span dir="ltr">09026543241</span>
-      </div>
-
-      <div class="contact-card">
-        <strong>Instagram</strong>
-        <span>@luna.jewelry</span>
-      </div>
-
-      <div class="contact-card">
-        <strong>ساعت پاسخگویی</strong>
-        <span>هر روز 10:00 تا 21:00</span>
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div class="footer-logo">
-      LUNA
-    </div>
+    <h2>مجموعه جواهرات</h2>
 
     <p>
-      © 2026 LUNA Jewelry — All Rights Reserved
+        انتخابی از طراحی‌های ظریف و لوکس LUNA
     </p>
 
-  </footer>
+</div>
 
 
-  <!-- CART -->
+<div class="search-box">
 
-  <div class="cart-overlay" id="cartOverlay">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="جستجوی محصول..."
+        oninput="renderProducts()"
+    >
 
-    <div class="cart">
+</div>
 
-      <div class="cart-header">
 
-        <h2>YOUR CART</h2>
+<div class="filters">
 
-        <button
-          class="close-cart"
-          onclick="closeCart()">
-          ×
-        </button>
+    <button class="filter active" data-category="all" onclick="filterProducts('all',this)">
+        همه
+    </button>
 
-      </div>
+    <button class="filter" data-category="ring" onclick="filterProducts('ring',this)">
+        انگشتر
+    </button>
 
-      <div class="cart-items" id="cartItems"></div>
+    <button class="filter" data-category="necklace" onclick="filterProducts('necklace',this)">
+        گردنبند
+    </button>
 
-      <div class="cart-total">
+    <button class="filter" data-category="earring" onclick="filterProducts('earring',this)">
+        گوشواره
+    </button>
 
-        <span>مجموع:</span>
+</div>
 
-        <strong id="cartTotal">
-          0 تومان
-        </strong>
 
-      </div>
+<div class="product-grid" id="productGrid"></div>
 
-      <button
-        class="checkout"
-        onclick="checkout()">
-        ادامه خرید
-      </button>
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about" id="about">
+
+<div class="container">
+
+<div class="about-grid">
+
+    <div class="about-art">
+
+        <div class="big-luna">
+            LUNA
+        </div>
 
     </div>
 
-  </div>
+
+    <div class="about-content">
+
+        <div class="eyebrow">
+            ABOUT LUNA
+        </div>
+
+        <h2>
+            زیبایی که ماندگار می‌شود
+        </h2>
+
+        <p>
+            LUNA با الهام از زیبایی آرام و درخشان ماه شکل گرفته است.
+            هدف ما خلق جواهراتی است که تنها یک اکسسوری نباشند،
+            بلکه بخشی از داستان شخصی شما باشند.
+        </p>
+
+        <p>
+            در طراحی‌های LUNA، ظرافت، سادگی و حس لوکس بودن در کنار
+            یکدیگر قرار گرفته‌اند تا محصولی کلاسیک و ماندگار شکل بگیرد.
+        </p>
 
 
-  <script>
+        <div class="about-points">
 
-    /* PRODUCTS FILTER */
+            <div class="about-point">
+                <strong>ظرافت</strong>
+                <span>طراحی با جزئیات دقیق</span>
+            </div>
 
-    const filters =
-      document.querySelectorAll('.filter');
+            <div class="about-point">
+                <strong>اصالت</strong>
+                <span>هویت خاص LUNA</span>
+            </div>
 
-    const products =
-      document.querySelectorAll('.product');
+            <div class="about-point">
+                <strong>ماندگاری</strong>
+                <span>زیبایی فراتر از زمان</span>
+            </div>
 
-    filters.forEach(button => {
+            <div class="about-point">
+                <strong>خاص بودن</strong>
+                <span>برای لحظه‌های خاص شما</span>
+            </div>
 
-      button.addEventListener('click', () => {
+        </div>
 
-        filters.forEach(btn =>
-          btn.classList.remove('active')
-        );
+    </div>
 
-        button.classList.add('active');
+</div>
 
-        const category =
-          button.dataset.filter;
+</div>
 
-        products.forEach(product => {
+</section>
 
-          if (
-            category === 'all' ||
-            product.dataset.category === category
-          ) {
-            product.style.display = '';
-          } else {
-            product.style.display = 'none';
-          }
 
-        });
+<!-- =========================
+     GUIDE
+========================= -->
 
-      });
+<section class="guide" id="guide">
+
+<div class="container">
+
+<div class="section-title">
+
+    <div class="eyebrow">SHOPPING GUIDE</div>
+
+    <h2>راهنمای خرید</h2>
+
+    <p>
+        خرید از LUNA ساده و سریع است.
+    </p>
+
+</div>
+
+
+<div class="guide-grid">
+
+    <div class="guide-card">
+
+        <div class="guide-number">01</div>
+
+        <h3>انتخاب محصول</h3>
+
+        <p>
+            محصول موردنظر خود را از میان مجموعه LUNA انتخاب کنید.
+        </p>
+
+    </div>
+
+
+    <div class="guide-card">
+
+        <div class="guide-number">02</div>
+
+        <h3>افزودن به سبد</h3>
+
+        <p>
+            محصول را به سبد خرید اضافه کنید و تعداد آن را مشخص کنید.
+        </p>
+
+    </div>
+
+
+    <div class="guide-card">
+
+        <div class="guide-number">03</div>
+
+        <h3>ثبت سفارش</h3>
+
+        <p>
+            اطلاعات تماس و آدرس خود را وارد کنید.
+        </p>
+
+    </div>
+
+
+    <div class="guide-card">
+
+        <div class="guide-number">04</div>
+
+        <h3>دریافت سفارش</h3>
+
+        <p>
+            سفارش شما پس از تأیید برای ارسال آماده می‌شود.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SUPPORT
+========================= -->
+
+<section class="support" id="support">
+
+<div class="container">
+
+<div class="section-title">
+
+    <div class="eyebrow">SUPPORT</div>
+
+    <h2>پشتیبانی</h2>
+
+    <p>
+        پاسخ پرسش‌های متداول و راه‌های ارتباط با LUNA
+    </p>
+
+</div>
+
+
+<div class="support-grid">
+
+<div>
+
+    <div class="faq">
+
+        <button class="faq-question" onclick="toggleFaq(this)">
+            آیا امکان تعویض محصول وجود دارد؟
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            برای شرایط تعویض و خدمات پس از فروش می‌توانید با پشتیبانی LUNA تماس بگیرید.
+        </div>
+
+    </div>
+
+
+    <div class="faq">
+
+        <button class="faq-question" onclick="toggleFaq(this)">
+            چطور سفارشم را ثبت کنم؟
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            محصول موردنظر را انتخاب کرده و پس از افزودن به سبد، مراحل ثبت سفارش را انجام دهید.
+        </div>
+
+    </div>
+
+
+    <div class="faq">
+
+        <button class="faq-question" onclick="toggleFaq(this)">
+            آیا محصولات بسته‌بندی هدیه دارند؟
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            برای اطلاع از بسته‌بندی هدیه و شرایط آن با پشتیبانی تماس بگیرید.
+        </div>
+
+    </div>
+
+
+    <div class="faq">
+
+        <button class="faq-question" onclick="toggleFaq(this)">
+            چگونه با LUNA تماس بگیرم؟
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            می‌توانید از طریق شماره تماس یا صفحه اینستاگرام با ما در ارتباط باشید.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="contact-box">
+
+    <h3 style="font-family:'Cormorant Garamond';font-size:32px;color:#d4af37;margin-bottom:15px;">
+        Contact LUNA
+    </h3>
+
+
+    <div class="contact-item">
+
+        <div class="contact-label">
+            تلفن
+        </div>
+
+        <div class="contact-value">
+            09026543241
+        </div>
+
+    </div>
+
+
+    <div class="contact-item">
+
+        <div class="contact-label">
+            Instagram
+        </div>
+
+        <div class="contact-value">
+            @luna.jewelry
+        </div>
+
+    </div>
+
+
+    <div class="contact-item">
+
+        <div class="contact-label">
+            ساعات پاسخگویی
+        </div>
+
+        <div class="contact-value">
+            هر روز — 10:00 تا 20:00
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     NEWSLETTER
+========================= -->
+
+<section class="newsletter">
+
+<div class="container">
+
+<div class="section-title">
+
+    <div class="eyebrow">LUNA NEWS</div>
+
+    <h2>همراه LUNA باشید</h2>
+
+    <p>
+        برای اطلاع از مجموعه‌های جدید و خبرهای LUNA ایمیل خود را وارد کنید.
+    </p>
+
+</div>
+
+
+<form class="newsletter-form" onsubmit="subscribe(event)">
+
+    <input
+        type="email"
+        required
+        placeholder="ایمیل شما..."
+    >
+
+    <button type="submit">
+        عضویت
+    </button>
+
+</form>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-grid">
+
+    <div>
+
+        <div class="footer-logo">
+            LUNA
+        </div>
+
+        <p class="footer-description">
+            جواهراتی برای درخشش لحظه‌هایی که ارزش ماندگار شدن دارند.
+        </p>
+
+    </div>
+
+
+    <div class="footer-col">
+
+        <h4>دسترسی سریع</h4>
+
+        <a href="#home">خانه</a>
+        <a href="#products">محصولات</a>
+        <a href="#about">درباره ما</a>
+
+    </div>
+
+
+    <div class="footer-col">
+
+        <h4>خدمات</h4>
+
+        <a href="#guide">راهنمای خرید</a>
+        <a href="#support">پشتیبانی</a>
+        <a href="#" onclick="openCart();return false;">سبد خرید</a>
+
+    </div>
+
+
+    <div class="footer-col">
+
+        <h4>ارتباط</h4>
+
+        <a href="tel:09026543241">09026543241</a>
+        <a href="https://instagram.com/luna.jewelry" target="_blank">
+            Instagram
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+    © 2026 LUNA Jewelry — All Rights Reserved
+</div>
+
+</footer>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+
+<aside class="cart-drawer" id="cartDrawer">
+
+    <div class="cart-head">
+
+        <h3>سبد خرید</h3>
+
+        <button class="close-cart" onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+
+    <div class="cart-items" id="cartItems"></div>
+
+
+    <div class="cart-footer">
+
+        <div class="total">
+
+            <span>
+                مجموع:
+            </span>
+
+            <strong id="cartTotal">
+                ۰ تومان
+            </strong>
+
+        </div>
+
+        <button class="btn" style="width:100%;" onclick="openCheckout()">
+            ادامه و ثبت سفارش
+        </button>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     CHECKOUT MODAL
+========================= -->
+
+<div class="modal" id="checkoutModal">
+
+<div class="modal-box">
+
+    <button class="modal-close" onclick="closeCheckout()">
+        ×
+    </button>
+
+    <h3>
+        ثبت سفارش
+    </h3>
+
+    <p style="color:#888;font-size:12px;">
+        اطلاعات خود را وارد کنید.
+    </p>
+
+
+    <input
+        class="checkout-input"
+        id="customerName"
+        placeholder="نام و نام خانوادگی"
+    >
+
+
+    <input
+        class="checkout-input"
+        id="customerPhone"
+        placeholder="شماره تماس"
+    >
+
+
+    <textarea
+        class="checkout-input"
+        id="customerAddress"
+        rows="4"
+        placeholder="آدرس"
+    ></textarea>
+
+
+    <div class="checkout-summary">
+
+        <div class="total">
+
+            <span>
+                مبلغ سفارش
+            </span>
+
+            <strong id="checkoutTotal">
+                ۰ تومان
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <button class="btn" style="width:100%;" onclick="submitOrder()">
+        تأیید سفارش
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================================
+   PRODUCT DATA
+========================================= */
+
+const products = [
+
+{
+    id:1,
+    name:"Halo Ring",
+    category:"ring",
+    categoryFa:"انگشتر",
+    price:4850000,
+    icon:"💍",
+    description:"انگشتری ظریف با طراحی کلاسیک و درخشان."
+},
+
+{
+    id:2,
+    name:"Luna Pendant",
+    category:"necklace",
+    categoryFa:"گردنبند",
+    price:6200000,
+    icon:"📿",
+    description:"گردنبند ظریف با الهام از نور ماه."
+},
+
+{
+    id:3,
+    name:"Élan Earrings",
+    category:"earring",
+    categoryFa:"گوشواره",
+    price:3950000,
+    icon:"✨",
+    description:"گوشواره‌ای مینیمال برای استایل‌های خاص."
+},
+
+{
+    id:4,
+    name:"Solitaire",
+    category:"ring",
+    categoryFa:"انگشتر",
+    price:7400000,
+    icon:"💎",
+    description:"طراحی کلاسیک و ماندگار LUNA."
+},
+
+{
+    id:5,
+    name:"Celeste Chain",
+    category:"necklace",
+    categoryFa:"گردنبند",
+    price:5650000,
+    icon:"🔗",
+    description:"زنجیر ظریف با ظاهر لوکس و مدرن."
+},
+
+{
+    id:6,
+    name:"Nova Drop",
+    category:"earring",
+    categoryFa:"گوشواره",
+    price:4300000,
+    icon:"💫",
+    description:"گوشواره‌ای ظریف با فرم الهام‌گرفته از ستاره."
+}
+
+];
+
+
+/* =========================================
+   STATE
+========================================= */
+
+let activeCategory = "all";
+
+let cart = JSON.parse(
+    localStorage.getItem("lunaCart") || "[]"
+);
+
+
+/* =========================================
+   FORMAT PRICE
+========================================= */
+
+function formatPrice(number){
+
+    return number
+        .toLocaleString("fa-IR") + " تومان";
+
+}
+
+
+/* =========================================
+   RENDER PRODUCTS
+========================================= */
+
+function renderProducts(){
+
+    const grid = document.getElementById("productGrid");
+
+    const search =
+        document.getElementById("searchInput").value
+        .trim()
+        .toLowerCase();
+
+
+    let filtered = products.filter(product => {
+
+        const categoryMatch =
+            activeCategory === "all" ||
+            product.category === activeCategory;
+
+        const searchMatch =
+            product.name.toLowerCase().includes(search) ||
+            product.description.toLowerCase().includes(search);
+
+        return categoryMatch && searchMatch;
 
     });
 
 
-    /* CART */
+    if(filtered.length === 0){
 
-    let cart = [];
+        grid.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                color:#777;
+                padding:50px;
+            ">
+                محصولی پیدا نشد.
+            </div>
+        `;
 
-
-    function addToCart(name, price, icon) {
-
-      const existing =
-        cart.find(item => item.name === name);
-
-      if (existing) {
-
-        existing.quantity++;
-
-      } else {
-
-        cart.push({
-          name,
-          price,
-          icon,
-          quantity: 1
-        });
-
-      }
-
-      updateCart();
-
-      openCart();
+        return;
     }
 
 
-    function updateCart() {
+    grid.innerHTML = filtered.map(product => `
 
-      const cartItems =
-        document.getElementById('cartItems');
+        <article class="product-card">
 
-      const cartCount =
-        document.getElementById('cartCount');
+            <div class="product-image">
+                ${product.icon}
+            </div>
 
-      const cartTotal =
-        document.getElementById('cartTotal');
+            <div class="product-info">
 
-      let total = 0;
-      let count = 0;
+                <div class="product-category">
+                    ${product.categoryFa}
+                </div>
 
-      cartItems.innerHTML = '';
+                <div class="product-name">
+                    ${product.name}
+                </div>
 
-      if (cart.length === 0) {
+                <div class="product-description">
+                    ${product.description}
+                </div>
 
-        cartItems.innerHTML =
-          '<div class="empty-cart">سبد خرید شما خالی است.</div>';
+                <div class="product-bottom">
 
-      }
+                    <div class="price">
+                        ${formatPrice(product.price)}
+                    </div>
 
-      cart.forEach((item, index) => {
+                    <button
+                        class="add-cart"
+                        onclick="addToCart(${product.id})"
+                    >
+                        افزودن به سبد
+                    </button>
 
-        total += item.price * item.quantity;
+                </div>
 
-        count += item.quantity;
+            </div>
 
-        const element =
-          document.createElement('div');
+        </article>
 
-        element.className = 'cart-item';
+    `).join("");
 
-        element.innerHTML = `
+}
 
-          <div class="cart-item-icon">
-            ${item.icon}
-          </div>
 
-          <div class="cart-item-info">
+/* =========================================
+   FILTER
+========================================= */
 
-            <strong>${item.name}</strong>
+function filterProducts(category, button){
 
-            <small>
-              ${formatPrice(item.price)} تومان
-            </small>
+    activeCategory = category;
 
-          </div>
+    document
+        .querySelectorAll(".filter")
+        .forEach(btn => btn.classList.remove("active"));
 
-          <div class="quantity">
+    button.classList.add("active");
 
-            <button
-              onclick="changeQuantity(${index},-1)">
-              −
-            </button>
+    renderProducts();
 
-            <span>${item.quantity}</span>
+}
 
-            <button
-              onclick="changeQuantity(${index},1)">
-              +
-            </button>
 
-          </div>
+/* =========================================
+   ADD TO CART
+========================================= */
+
+function addToCart(id){
+
+    const product = products.find(p => p.id === id);
+
+    if(!product) return;
+
+
+    const existing = cart.find(item => item.id === id);
+
+
+    if(existing){
+
+        existing.qty++;
+
+    }else{
+
+        cart.push({
+            id:product.id,
+            qty:1
+        });
+
+    }
+
+
+    saveCart();
+
+    updateCartUI();
+
+    showToast(
+        product.name + " به سبد خرید اضافه شد."
+    );
+
+}
+
+
+/* =========================================
+   SAVE CART
+========================================= */
+
+function saveCart(){
+
+    localStorage.setItem(
+        "lunaCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =========================================
+   CART UI
+========================================= */
+
+function updateCartUI(){
+
+    const container =
+        document.getElementById("cartItems");
+
+    const count =
+        document.getElementById("cartCount");
+
+    const totalElement =
+        document.getElementById("cartTotal");
+
+
+    const totalQty =
+        cart.reduce(
+            (sum,item) => sum + item.qty,
+            0
+        );
+
+
+    count.textContent =
+        totalQty.toLocaleString("fa-IR");
+
+    count.style.display =
+        totalQty > 0 ? "flex" : "none";
+
+
+    if(cart.length === 0){
+
+        container.innerHTML = `
+            <div class="empty-cart">
+                سبد خرید شما خالی است.
+            </div>
+        `;
+
+        totalElement.textContent =
+            "۰ تومان";
+
+        return;
+    }
+
+
+    let total = 0;
+
+
+    container.innerHTML = cart.map(item => {
+
+        const product =
+            products.find(p => p.id === item.id);
+
+        if(!product) return "";
+
+        total += product.price * item.qty;
+
+
+        return `
+
+            <div class="cart-item">
+
+                <div class="cart-item-image">
+                    ${product.icon}
+                </div>
+
+                <div class="cart-item-info">
+
+                    <div class="cart-item-name">
+                        ${product.name}
+                    </div>
+
+                    <div class="cart-item-price">
+                        ${formatPrice(product.price)}
+                    </div>
+
+                    <div class="qty">
+
+                        <button
+                            onclick="changeQty(${product.id},1)"
+                        >
+                            +
+                        </button>
+
+                        <span>
+                            ${item.qty}
+                        </span>
+
+                        <button
+                            onclick="changeQty(${product.id},-1)"
+                        >
+                            −
+                        </button>
+
+                        <button
+                            class="remove"
+                            onclick="removeFromCart(${product.id})"
+                        >
+                            حذف
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         `;
 
-        cartItems.appendChild(element);
-
-      });
-
-      cartCount.textContent = count;
-
-      cartTotal.textContent =
-        formatPrice(total) + ' تومان';
-
-    }
+    }).join("");
 
 
-    function changeQuantity(index, change) {
+    totalElement.textContent =
+        formatPrice(total);
 
-      cart[index].quantity += change;
-
-      if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-      }
-
-      updateCart();
-
-    }
+}
 
 
-    function formatPrice(number) {
+/* =========================================
+   CHANGE QTY
+========================================= */
 
-      return number.toLocaleString('fa-IR');
+function changeQty(id, change){
 
-    }
+    const item =
+        cart.find(item => item.id === id);
+
+    if(!item) return;
 
 
-    function openCart() {
+    item.qty += change;
 
-      document
-        .getElementById('cartOverlay')
-        .classList.add('open');
+
+    if(item.qty <= 0){
+
+        cart =
+            cart.filter(item => item.id !== id);
 
     }
 
 
-    function closeCart() {
+    saveCart();
 
-      document
-        .getElementById('cartOverlay')
-        .classList.remove('open');
+    updateCartUI();
 
-    }
+}
 
 
-    function checkout() {
+/* =========================================
+   REMOVE
+========================================= */
 
-      if (cart.length === 0) {
+function removeFromCart(id){
 
-        alert('سبد خرید شما خالی است.');
+    cart =
+        cart.filter(item => item.id !== id);
+
+    saveCart();
+
+    updateCartUI();
+
+}
+
+
+/* =========================================
+   OPEN CART
+========================================= */
+
+function openCart(){
+
+    document
+        .getElementById("cartDrawer")
+        .classList.add("open");
+
+    document
+        .getElementById("overlay")
+        .classList.add("active");
+
+    updateCartUI();
+
+}
+
+
+/* =========================================
+   CLOSE CART
+========================================= */
+
+function closeCart(){
+
+    document
+        .getElementById("cartDrawer")
+        .classList.remove("open");
+
+    document
+        .getElementById("overlay")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================
+   CHECKOUT
+========================================= */
+
+function openCheckout(){
+
+    if(cart.length === 0){
+
+        showToast(
+            "سبد خرید شما خالی است."
+        );
 
         return;
-      }
-
-      alert(
-        'سفارش شما ثبت شد. برای اتصال به درگاه پرداخت باید سیستم پرداخت واقعی به سایت اضافه شود.'
-      );
 
     }
+
+
+    closeCart();
+
+    document
+        .getElementById("checkoutModal")
+        .classList.add("active");
+
+
+    let total = 0;
+
+
+    cart.forEach(item => {
+
+        const product =
+            products.find(p => p.id === item.id);
+
+        if(product){
+
+            total +=
+                product.price * item.qty;
+
+        }
+
+    });
 
 
     document
-      .getElementById('cartOverlay')
-      .addEventListener('click', function(e) {
+        .getElementById("checkoutTotal")
+        .textContent =
+        formatPrice(total);
 
-        if (e.target === this) {
-          closeCart();
-        }
-
-      });
+}
 
 
-    updateCart();
+function closeCheckout(){
 
-  </script>
+    document
+        .getElementById("checkoutModal")
+        .classList.remove("active");
+
+}
+
+
+/* =========================================
+   SUBMIT ORDER
+========================================= */
+
+function submitOrder(){
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const phone =
+        document.getElementById("customerPhone").value.trim();
+
+    const address =
+        document.getElementById("customerAddress").value.trim();
+
+
+    if(!name || !phone || !address){
+
+        showToast(
+            "لطفاً تمام اطلاعات را وارد کنید."
+        );
+
+        return;
+
+    }
+
+
+    /*
+       این بخش فعلاً شبیه‌سازی ثبت سفارش است.
+       برای پرداخت واقعی باید درگاه پرداخت و
+       بک‌اند به سایت اضافه شود.
+    */
+
+
+    closeCheckout();
+
+
+    cart = [];
+
+    saveCart();
+
+    updateCartUI();
+
+
+    showToast(
+        "سفارش شما با موفقیت ثبت شد."
+    );
+
+
+    document.getElementById("customerName").value = "";
+    document.getElementById("customerPhone").value = "";
+    document.getElementById("customerAddress").value = "";
+
+}
+
+
+/* =========================================
+   FAQ
+========================================= */
+
+function toggleFaq(button){
+
+    const faq =
+        button.parentElement;
+
+    faq.classList.toggle("open");
+
+
+    const sign =
+        button.querySelector("span");
+
+    sign.textContent =
+        faq.classList.contains("open")
+        ? "−"
+        : "+";
+
+}
+
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+function toggleMobileMenu(){
+
+    document
+        .getElementById("nav")
+        .classList.toggle("mobile-open");
+
+}
+
+
+/* =========================================
+   NEWSLETTER
+========================================= */
+
+function subscribe(event){
+
+    event.preventDefault();
+
+    showToast(
+        "ایمیل شما با موفقیت ثبت شد."
+    );
+
+    event.target.reset();
+
+}
+
+
+/* =========================================
+   TOAST
+========================================= */
+
+let toastTimer;
+
+function showToast(message){
+
+    const toast =
+        document.getElementById("toast");
+
+    toast.textContent =
+        message;
+
+    toast.classList.add("show");
+
+
+    clearTimeout(toastTimer);
+
+
+    toastTimer =
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        },3000);
+
+}
+
+
+/* =========================================
+   MOBILE MENU CLOSE AFTER CLICK
+========================================= */
+
+document
+    .querySelectorAll(".menu a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            document
+                .getElementById("nav")
+                .classList.remove("mobile-open");
+
+        });
+
+    });
+
+
+/* =========================================
+   INIT
+========================================= */
+
+renderProducts();
+
+updateCartUI();
+
+</script>
 
 </body>
 </html>
